@@ -60,5 +60,6 @@ crashlytics-build.properties
 
 # MAC
 /_mac/
+/inspection/
 .DS_Store
 /*.xml
