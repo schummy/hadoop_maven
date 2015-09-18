@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Start cleaning!");
         Cleaner svitlanaPetrivna = new Cleaner("Svitlana Petrivna", 0.9);
         Cleaner olenaAnatoliivna = new Cleaner("Olena Anatoliivna", 0.85);
-        Cleaner irynaVasilivna = new Cleaner("Iryna Vasilivna", 0.92);
+        Cleaner irynaVasyliivna = new Cleaner("Iryna Vasilivna", 0.92);
         ArrayList<RecycleBin> floor1 = new ArrayList<RecycleBin>();
         ArrayList<RecycleBin> floor2 = new ArrayList<RecycleBin>();
         ArrayList<RecycleBin> floor3 = new ArrayList<RecycleBin>();
@@ -36,9 +36,9 @@ public class Main {
 
         svitlanaPetrivna.assignFloor(floor1);
         olenaAnatoliivna.assignFloor(floor2);
-        irynaVasilivna.assignFloor(floor3);
+        irynaVasyliivna.assignFloor(floor3);
         (new Thread(svitlanaPetrivna)).start();
         (new Thread(olenaAnatoliivna)).start();
-        (new Thread(irynaVasilivna)).start();
+        (new Thread(irynaVasyliivna)).start();
     }
 }
