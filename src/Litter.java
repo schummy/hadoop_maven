@@ -1,18 +1,23 @@
 /**
  * Created by user on 9/18/15.
+ * Litter class represents employe who puts trash into the recycle bin.
  */
+
 public class Litter implements Runnable {
 
-    private RecycleBin _bin;
+    private RecycleBin bin;
 
-    public Litter(RecycleBin _been) {
-        this._bin = _been;
+    public Litter(RecycleBin bin) {
+
+        this.bin = bin;
     }
+
     public void litter() throws InterruptedException {
         Thread.sleep((long) (100000 * Math.random()));
-        this._bin.set_isEmpty(false);
-        System.out.println("New trash in the bin" + _bin.get_coordinate());
+        this.bin.setEmpty(false);
+        System.out.println("New trash in the bin" + bin.getCoordinate());
     }
+
     @Override
     public void run() {
         while (true) {
