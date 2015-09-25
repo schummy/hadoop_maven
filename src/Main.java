@@ -18,17 +18,17 @@ public class Main {
         for (int i=1; i<100; i++)
         {
             RecycleBin bin1 = new RecycleBin("1:"+String.valueOf(i));
-            bin1.set_isEmpty(rnd.nextBoolean());
+            bin1.setEmpty(rnd.nextBoolean());
             floor1.add(bin1);
             (new Thread(new Litter(bin1))).start();
 
             RecycleBin bin2 = new RecycleBin("2:"+String.valueOf(i));
-            bin2.set_isEmpty(rnd.nextBoolean());
+            bin2.setEmpty(rnd.nextBoolean());
             floor2.add(bin2);
             (new Thread(new Litter(bin2))).start();
 
             RecycleBin bin3 = new RecycleBin("3:"+String.valueOf(i));
-            bin3.set_isEmpty(rnd.nextBoolean());
+            bin3.setEmpty(rnd.nextBoolean());
             floor3.add(bin3);
             (new Thread(new Litter(bin3))).start();
 
