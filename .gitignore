@@ -10,8 +10,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
-=======
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -24,7 +22,6 @@ hs_err_pid*
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
->>>>>>> 633eac57953cc0a09c45651fb210cf71ca545114
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 
@@ -77,8 +74,15 @@ crashlytics-build.properties
 /_mac/
 /inspection/
 .DS_Store
-<<<<<<< HEAD
-/*.xml
-=======
 
->>>>>>> 633eac57953cc0a09c45651fb210cf71ca545114
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
