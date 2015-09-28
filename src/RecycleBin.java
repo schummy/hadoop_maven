@@ -1,5 +1,6 @@
 /**
  * Created by user on 9/18/15.
+ * RecycleBin  class
  */
 public class RecycleBin {
     private boolean isEmpty;
