@@ -14,26 +14,30 @@ public class Cleaner implements Runnable{
         this.performance = performance;
     }
 
-    public void assignFloor(ArrayList<RecycleBin> recycleBins) {
+    public void assignBinsPool(ArrayList<RecycleBin> recycleBins) {
 
         this.recycleBinsPool = recycleBins;
     }
 
     public void cleanBin(RecycleBin bin) throws InterruptedException {
-        if ( ! bin.isEmpty() ) {
-            double time = 400 * this.performance;
-            Thread.sleep((long) time);
-            bin.setEmpty(true);
-            System.out.println(this.name + " has cleaned the bin " + bin.getCoordinate()
-                    + " in " + String.valueOf(time) + "ms" );
-        }
+      synchronized (bin) {
+          if (!bin.isEmpty()) {
+              double time = 400 * this.performance;
+              Thread.sleep((long) time);
+              bin.setEmpty(true);
+              System.out.println(this.name + " has cleaned the bin " + bin.getCoordinate()
+                      + " in " + String.valueOf(time) + "ms");
+          }
+      }
     }
 
     public void cleanBinsPool() throws InterruptedException {
         for (RecycleBin been : this.recycleBinsPool) {
             cleanBin(been);
         }
-        System.out.println(this.name + " has cleaned the floor" );
+        System.out.println(this.name + " has cleaned the floor." );
+        Thread.sleep(10000);
+
     }
 
     @Override

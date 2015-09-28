@@ -25,4 +25,5 @@ public class RecycleBin {
 
         this.isEmpty = empty;
     }
+
 }
