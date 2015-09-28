@@ -1,6 +1,6 @@
 /**
  * Created by user on 9/18/15.
- * Litter class represents employe who puts trash into the recycle bin.
+ * Litter class represents employee who puts trash into the recycle bin.
  */
 
 public class Litter implements Runnable {
@@ -13,9 +13,11 @@ public class Litter implements Runnable {
     }
 
     public void litter() throws InterruptedException {
-        Thread.sleep((long) (100000 * Math.random()));
-        this.bin.setEmpty(false);
-        System.out.println("New trash in the bin" + bin.getCoordinate());
+            Thread.sleep((long) (100000 * Math.random()));
+            synchronized (this.bin) {
+                this.bin.setEmpty(false);
+                System.out.println("New trash in the bin " + bin.getCoordinate());
+            }
     }
 
     @Override
