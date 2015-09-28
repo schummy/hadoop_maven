@@ -22,6 +22,12 @@ public class RecycleBin {
         return isEmpty;
     }
 
+    /**
+     * Set isEmpty flag for current recycleBin
+     *
+     * @param  empty boolean flag
+     * @see         RecycleBin
+     */
     public synchronized void setEmpty(boolean empty) {
 
         this.isEmpty = empty;
