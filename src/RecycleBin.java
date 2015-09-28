@@ -23,7 +23,7 @@ public class RecycleBin {
     }
 
     /**
-     * Set isEmpty flag for current recycleBin
+     * Set isEmpty flag for current recycleBin.
      *
      * @param  empty boolean flag
      * @see         RecycleBin
