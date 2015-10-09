@@ -1,3 +1,6 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 
 /**
@@ -8,34 +11,33 @@ public class Cleaner implements Runnable{
     private String name;
     private Double performance;
     private ArrayList<RecycleBin> recycleBinsPool;
+    final Logger logger = LoggerFactory.getLogger(Cleaner.class);
+
 
     public Cleaner(String name, Double performance) {
         this.name = name;
         this.performance = performance;
     }
 
-    public void assignBinsPool(ArrayList<RecycleBin> recycleBins) {
+    public void setRecycleBinsPool(ArrayList<RecycleBin> recycleBins) {
 
         this.recycleBinsPool = recycleBins;
     }
 
     public void cleanBin(RecycleBin bin) throws InterruptedException {
-      synchronized (bin) {
-          if (!bin.isEmpty()) {
-              double time = 400 * this.performance;
-              Thread.sleep((long) time);
-              bin.setEmpty(true);
-              System.out.println(this.name + " has cleaned the bin " + bin.getCoordinate()
-                      + " in " + String.valueOf(time) + "ms");
-          }
-      }
+
+        Double time =bin.clean(performance);
+        if (time !=0 ) {
+            logger.info("{} has cleaned the bin {} in {} ms", this.name,  bin.getCoordinate(),
+                    time);
+        }
     }
 
     public void cleanBinsPool() throws InterruptedException {
         for (RecycleBin been : this.recycleBinsPool) {
             cleanBin(been);
         }
-        System.out.println(this.name + " has cleaned the floor." );
+        logger.info("{} has cleaned the floor.", this.name );
         Thread.sleep(10000);
 
     }
