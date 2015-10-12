@@ -1,3 +1,6 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by user on 9/18/15.
  * Litter class represents employee who puts trash into the recycle bin.
@@ -6,6 +9,7 @@
 public class Litter implements Runnable {
 
     private RecycleBin bin;
+    final Logger logger = LoggerFactory.getLogger(Litter.class);
 
     public Litter(RecycleBin bin) {
 
@@ -13,11 +17,8 @@ public class Litter implements Runnable {
     }
 
     public void litter() throws InterruptedException {
-            Thread.sleep((long) (100000 * Math.random()));
-            synchronized (this.bin) {
-                this.bin.setEmpty(false);
-                System.out.println("New trash in the bin " + bin.getCoordinate());
-            }
+        bin.litter();
+        Thread.sleep((long) (100000 * Math.random()));
     }
 
     @Override
@@ -26,7 +27,7 @@ public class Litter implements Runnable {
             try {
                 litter();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                bin.litter();
             }
         }
     }
