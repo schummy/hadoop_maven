@@ -5,16 +5,21 @@ import org.slf4j.LoggerFactory;
  * Created by user on 9/18/15.
  * RecycleBin  class
  */
-public class RecycleBin {
-    private boolean isEmpty;
+public class RecycleBin implements java.io.Serializable{
+    private int trash;
     private String coordinate;
+
 
     static final Logger logger = LoggerFactory.getLogger(RecycleBin.class);
 
     public RecycleBin(String coordinate) {
 
-        this.isEmpty = true;
+        this.trash = 0;
         this.coordinate = coordinate;
+    }
+    public RecycleBin() {
+
+        this.trash = 0;
     }
 
     public String getCoordinate() {
@@ -22,35 +27,43 @@ public class RecycleBin {
         return coordinate;
     }
 
-    public boolean isEmpty() {
-
-        return isEmpty;
-    }
-
     /**
-     * Set isEmpty flag for current recycleBin.
+     * Set trash flag for current recycleBin.
      *
-     * @param  empty boolean flag
+     * @param  trash int value
      * @see         RecycleBin
      */
-    public void setEmpty(boolean empty) {
-        this.isEmpty = empty;
-        logger.info("New trash in the bin " + getCoordinate());
+    public void setTrash(int trash) {
+        this.trash = trash;
 
     }
 
     public synchronized double clean(Double performance) throws InterruptedException {
-        if (! isEmpty()) {
+        if (! this.isEmpty()) {
             double time = 400 * performance;
             Thread.sleep((long) time);
-            setEmpty(true);
+            trash = 0;
+            logger.debug("The bin {} was cleaned.", getCoordinate());
             return time;
         }
         return 0;
     }
 
+    private boolean isEmpty() {
+        return trash == 0;
+    }
+
     public synchronized void litter() {
 
-        setEmpty(false);
+        trash++;
+        logger.info("The bin {} has trash {}.", getCoordinate(), trash);
+
+    }
+
+    public void setCoordinate(String coordinate) {
+
+        this.coordinate = coordinate;
+        logger.debug("New coordinates for bin: {}.", getCoordinate());
+
     }
 }

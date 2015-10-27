@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="recycleBin1001" class="RecycleBin">
+        <constructor-arg value="test 1:001" />
+    </bean>
+
+    <bean id="recycleBin1002" class="RecycleBin">
+        <constructor-arg value="test 1:002" />
+    </bean>
+    <bean id="recycleBin2001" class="RecycleBin">
+        <constructor-arg value="test 2:001" />
+    </bean>
+
+    <bean id="recycleBin2002" class="RecycleBin">
+        <constructor-arg value="test 2:002" />
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="svitlanaPetrivna" class="Cleaner">
+              <property name="name" value="Svitlana Petrivna"/>
+              <property name="performance" value="0.9"/>
+       </bean>
+
+       <bean id="olenaAnatoliivna" class="Cleaner">
+              <property name="name" value="Olena Anatoliivna"/>
+              <property name="performance" value="0.85"/>
+       </bean>
+
+       <bean id="irynaVasilivna" class="Cleaner">
+              <property name="name" value="Iryna Vasilivna"/>
+              <property name="performance" value="0.92"/>
+       </bean>
+
+       <bean id="cleaners" class="java.util.ArrayList">
+              <constructor-arg>
+                     <list>
+                            <ref bean="svitlanaPetrivna" />
+                         <ref bean="olenaAnatoliivna" />
+
+                     </list>
+              </constructor-arg>
+       </bean>
+
+</beans>
