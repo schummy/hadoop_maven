@@ -71,8 +71,8 @@ crashlytics.properties
 crashlytics-build.properties
 
 # MAC
-/_mac/
-/inspection/
+_mac/
+inspection/
 .DS_Store
 
 # Maven
@@ -86,3 +86,4 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+/*.xml
