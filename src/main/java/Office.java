@@ -40,11 +40,13 @@ public class Office {
             }
         }
 
-        for (int i = 0; i < cleaners.size(); i++) {
-            Cleaner cleaner = cleaners.get(i);
-
-            cleaner.setRecycleBinsPool( floors.get(i).getRecycleBins());
-            (new Thread(cleaner)).start();
+        for (int i = 0; i < floors.size(); i++) {
+            Floor floor = floors.get(i);
+            if (i < cleaners.size()) {
+                Cleaner cleaner = cleaners.get(i);
+                cleaner.setRecycleBinsPool(floor.getRecycleBins());
+                (new Thread(cleaner)).start();
+            }
         }
     }
 }
