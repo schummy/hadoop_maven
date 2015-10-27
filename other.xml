@@ -1,5 +1,0 @@
-<application>
-  <component name="RefactoringSettings">
-    <option name="ENCAPSULATE_FIELDS_USE_ACCESSORS_WHEN_ACCESSIBLE" value="false" />
-  </component>
-</application>
