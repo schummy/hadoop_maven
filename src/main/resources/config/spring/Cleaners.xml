@@ -21,9 +21,9 @@
        <bean id="cleaners" class="java.util.ArrayList">
               <constructor-arg>
                      <list>
-                            <ref bean="svitlanaPetrivna" />
+                         <ref bean="svitlanaPetrivna" />
                          <ref bean="olenaAnatoliivna" />
-
+                         <ref bean="irynaVasilivna" />
                      </list>
               </constructor-arg>
        </bean>
