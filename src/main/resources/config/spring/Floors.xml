@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="classpath:config/spring/Employees.xml"/>
+    <import resource="classpath:config/spring/RecycleBins.xml"/>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+    <bean id="floor1" class="Floor">
+        <property name="employees">
+            <list>
+                <ref bean="employee1001"/>
+                <ref bean="employee1002"/>
+            </list>
+        </property>
+        <property name="recycleBins">
+            <list>
+                <ref bean="recycleBin1001"/>
+                <ref bean="recycleBin1002"/>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="floor2" class="Floor">
+        <property name="employees">
+            <list>
+                <ref bean="employee2001"/>
+                <ref bean="employee2002"/>
+            </list>
+        </property>
+        <property name="recycleBins">
+            <list>
+                <ref bean="recycleBin2001"/>
+                <ref bean="recycleBin2002"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="floors" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="floor1" />
+                <ref bean="floor2" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
