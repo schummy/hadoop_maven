@@ -1,5 +1,6 @@
 <application>
   <component name="ExternalResourceManagerImpl">
     <resource url="http://www.springframework.org/schema/hadoop" location="$USER_HOME$/Library/Caches/IntelliJIdea14/extResources/f69b53_spring-hadoop.xsd" />
+    <resource url="http://www.springframework.org/schema/hadoop/spring-hadoop.xsd" location="$USER_HOME$/Library/Caches/IntelliJIdea14/extResources/f69b53_spring-hadoop.xsd" />
   </component>
 </application>
