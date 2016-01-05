@@ -21,6 +21,16 @@
         </annotationProcessing>
         <bytecodeTargetLevel target="1.8" />
       </component>
+      <component name="GradleLocalSettings">
+        <option name="modificationStamps">
+          <map>
+            <entry key="$USER_HOME$/bigData/spring-hadoop-samples/yarn/yarn/custom-amservice" value="4355966817000" />
+          </map>
+        </option>
+        <option name="externalProjectsViewState">
+          <projects_view />
+        </option>
+      </component>
       <component name="MavenImportPreferences">
         <option name="generalSettings">
           <MavenGeneralSettings>
