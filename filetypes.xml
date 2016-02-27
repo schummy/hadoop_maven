@@ -4,6 +4,7 @@
     <extensionMap>
       <mapping pattern="part-r-00000" type="PLAIN_TEXT" />
       <mapping pattern=".part-r-00000.crc" type="PLAIN_TEXT" />
+      <mapping pattern=".history" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
